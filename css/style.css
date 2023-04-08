@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    padding: 1%;
+    height: 7%;
+}
+
+header > div
+{
+    display: flex;
+}
+
+header > div > a img
+{
+    height: 70%;
+}
+
+.barra_de_pesquisa {
+    width: 30%;
+}
+
+.barra_de_pesquisa input {
+    width: 88%;
+    padding: 1rem;
+    border: .5px solid #505050;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    font-size: 1rem;
+}
+
+.barra_de_pesquisa button {
+    cursor: pointer;
+    width: 12%;
+    border: .5px solid #505050;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    background-color: rgb(241, 241, 241);
+    background-image: url("../img/lupa.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+}
+
+.barra_de_pesquisa button:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+/* Parte dos vídeos */
+
+.thumb
+{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-card
+{
+    display: block;
+    padding: 1.7%;
+}
+
+main
+{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding-top: 6%;
+}
