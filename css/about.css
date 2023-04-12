@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     height: calc(100vh - 5rem);
+    padding-top: 4.5rem;
     gap: 4rem;
 }
 
@@ -21,5 +22,17 @@
 
 .about__colaborador p {
     margin-bottom: 1rem;
-    
+}
+
+.link_github
+{
+    padding: .8rem;
+    border-radius: .5rem;
+    background-color: rgb(3, 3, 61);
+    color: white;
+}
+
+.link_github:hover
+{
+    background-color: rgb(13, 13, 87);
 }

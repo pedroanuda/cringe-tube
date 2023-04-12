@@ -104,8 +104,20 @@ header > div > a img
 
 .navegacao > ul > li
 {
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: .8rem;
+}
+
+.navegacao > ul > li > a {
+    padding: 1rem;
+    /* border-radius: .8rem; */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navegacao > ul > li > a > img {
+    width: 1.45rem;
 }
 
 .navegacao > ul > li:active,
@@ -120,6 +132,51 @@ header > div > a img
     background-color: #e0e0e0;
 }
 
+hr
+{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+/* Filtros (Chips) */
+
+.filtros
+{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    top: 3.5rem;
+    left: 15rem;
+    padding: .8rem;
+    padding-left: 1.2rem;
+    min-width: calc(100vw - 15rem);
+    overflow: hidden;
+}
+
+.filtros > ul {
+    list-style-type: none;
+    display: flex;
+    gap: .8rem;
+}
+
+.filtros > ul > li {
+    padding: .5rem;
+    background-color: #eeeeee;
+    cursor: pointer;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.filtros > ul > li:hover {
+    background-color: #e0e0e0;
+}
+
+.filtros > ul > .filter_selected,
+.filtros > ul > .filter_selected:hover {
+    background-color: #1f1f1f;
+    color: white;
+}
+
 /* Parte dos vídeos */
 
 .thumb
@@ -132,7 +189,7 @@ header > div > a img
 .video-card
 {
     display: block;
-    word-break: break-all;
+    word-break: keep-all;
     padding: 1.7%;
     margin-bottom: 2rem;
 }
@@ -157,7 +214,7 @@ header > div > a img
 main
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-    padding-top: 4.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    padding-top: 8.5rem;
     padding-left: 16rem;
 }
