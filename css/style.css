@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); /* Fonte para usarmos no site */
 
-/* Evitar estilização dos navegadores por padrão */
+/* Variáveis do CSS */
+
+:root {
+    --cor-texto: black;
+    --cor-de-fundo: #fff;
+    --scrollbar: #3d3d3d;
+    --scrollbar-hover: #686868;
+    --item-hover: #eeeeee;
+    --item-hover2: #e0e0e0;
+    --input-borda: #505050;
+    --input-selecionado: #2559ca;
+}
+
+/* Evitar e ajustar estilização dos navegadores por padrão */
 
 * {
     margin: 0;
@@ -9,12 +22,30 @@
 
 html {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: var(--cor-de-fundo);
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--cor-texto);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    margin: .2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--cor-de-fundo);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-hover);
 }
 
 /* Cabeçalho */
@@ -24,7 +55,7 @@ header
     display: flex;
     justify-content: space-between;
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--cor-de-fundo);
     width: calc(100vw - 2rem);
     padding: .5rem;
     padding-left: 1rem;
@@ -42,6 +73,15 @@ header > #acoes
     align-items: center;
 }
 
+.icone_hover {
+    padding: 0 2px;
+    border-radius: 50%;
+}
+
+.icone_hover:hover {
+    background-color: var(--item-hover);
+}
+
 header > div > a img
 {
     height: 2rem;
@@ -52,6 +92,7 @@ header > div > a img
     height: 2.5rem;
     display: flex;
     align-items: center;
+    outline: transparent;
 }
 
 .barra_de_pesquisa input {
@@ -62,16 +103,20 @@ header > div > a img
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
     font-size: 1rem;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.123);
 }
 
 .barra_de_pesquisa input:focus {
-    border: none;
+    outline: transparent;
+    background: transparent;
+    border: .5px solid var(--input-selecionado);
+    box-shadow: inset 1px 2.1px 2px rgba(0, 0, 0, 0.123);
 }
 
 .barra_de_pesquisa button {
     cursor: pointer;
     width: 12%;
-    border: .5px solid #505050;
+    border: .5px solid var(--input-borda);
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
     background-color: rgb(241, 241, 241);
@@ -83,20 +128,24 @@ header > div > a img
 }
 
 .barra_de_pesquisa button:hover {
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(224, 224, 224);
 }
 
 /* Parte da Navegação */
 
 .navegacao
 {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--cor-de-fundo);
     position: fixed;
     top: 3.5rem;
     height: calc(100vh - 3.5rem);
     width: 13rem;
     padding: 1rem;
     z-index: 1;
+}
+
+.navegacao:hover {
+    overflow-y: scroll;
 }
 
 .navegacao > ul
@@ -110,7 +159,7 @@ header > div > a img
 }
 
 .navegacao > ul > li > a {
-    padding: 1rem;
+    padding: .5rem 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -120,16 +169,14 @@ header > div > a img
     width: 1.45rem;
 }
 
-.navegacao > ul > li:active,
-.navegacao > ul > li:hover,
-.navegacao > ul > .link_selected
+.navegacao > ul :is(li:active, li:hover, .link_selected)
 {
-    background-color: #eeeeee;
+    background-color: var(--item-hover);
 }
 
 .navegacao > ul > .link_selected:hover
 {
-    background-color: #e0e0e0;
+    background-color: var(--item-hover2);
 }
 
 hr
@@ -138,12 +185,17 @@ hr
     margin-bottom: .5rem;
 }
 
+.navegacao > span {
+    padding: 1rem;
+    color: rgba(129, 129, 129, 0.87);
+}
+
 /* Filtros (Chips) */
 
 .filtros
 {
     position: fixed;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--cor-de-fundo);
     top: 3.5rem;
     left: 15rem;
     padding: .8rem;
@@ -161,7 +213,7 @@ hr
 
 .filtros > ul > li {
     padding: .5rem;
-    background-color: #eeeeee;
+    background-color: var(--item-hover);
     cursor: pointer;
     border-radius: .5rem;
     box-sizing: border-box;
@@ -169,7 +221,7 @@ hr
 }
 
 .filtros > ul > li:hover {
-    background-color: #e0e0e0;
+    background-color: var(--item-hover2);
 }
 
 .filtros > ul > .filter_selected,
